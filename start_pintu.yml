@@ -1,0 +1,22 @@
+---
+# app
+- hosts: all
+  sudo: yes
+  #gather_facts: no
+  remote_user: root
+  tasks:
+
+  - name: install git
+    apt: name=git state=installed
+
+  - name: install node
+    apt: name:nodejs state=installed
+
+  - name: install nodejs-legacy
+    apt: name:nodejs-legacy state=installed
+
+  - name: npm install webpack
+    npm: 
+      name: webpack
+      global: yes
+  
